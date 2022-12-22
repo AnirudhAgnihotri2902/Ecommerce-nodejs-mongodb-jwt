@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Cart</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+        <Center><h4>Hey <%- currentUser.name %> Welcome to your Cart</h4></Center>
+          <div class="col-sm-12 col-md-10 col-md-offset-1">
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th>Product</th>
+                          <th class="text-center">Total</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <%- include ('transaction') %>
+                      <tr>
+                          <td>
+                            <form action="/vieworders" method="post">
+                                <input type='hidden' name='user' value="<%- currentUser.email%>" />
+                          <button type="submit" class="btn btn-default">
+                              <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                          </button> </form></td>
+                          <td>
+                          <button type="button" class="btn btn-success">
+                              Checkout <span class="glyphicon glyphicon-play"></span>
+                          </button></td>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+  
+</body>
+</html>

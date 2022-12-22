@@ -1,0 +1,15 @@
+<% for(var i = 0; i < allorders.orders.length; i++) { %>
+  
+  <tr>
+    <td class="col-sm-8 col-md-6">
+    <div class="media">
+        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<%-allorders.orders[i].productImage %>" style="width: 72px; height: 72px;"> </a>
+        <div class="media-body">
+            <h4 class="media-heading"><a href="#"><%- allorders.orders[i].productName %></a></h4>
+        </div>
+    </div></td>
+    <td class="col-sm-1 col-md-1 text-center"><strong>Rs <%- allorders.orders[i].productPrice %></strong></td>
+</tr>
+
+
+  <% } %>
