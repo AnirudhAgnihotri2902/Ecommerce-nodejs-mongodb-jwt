@@ -21,6 +21,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: #131313;
+    margin-top: 20px;
 }
 
 .container {
@@ -202,7 +203,16 @@ body {
     transform: translateY(50px);
     transition: .5s;
 }
-
+.btnn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+}
 .container .card:hover .contentBx a {
     opacity: 1;
     transform: translateY(0px);
@@ -214,17 +224,15 @@ body {
 
 <body>
   <div>
-  <center><h1 style="color: #fff;">ShoeStore</h1>
-    <h1 style="color: #fff;">Welcome <%- currentUser.name %></h1>
+  <center>
+    <h3 style="color: #fff;">Hey<%- currentUser.name %>!!</h3>
+    <h1 style="color: #fff;">Welcome to ShoeStore</h1>
     <h1><form action="/viewcart" method="post">
       <input type='hidden' name='user' value="<%- currentUser.email%>" />
-        <a><button type="submit" style="padding: 5px 10px; border-radius: 20%; font-weight: 300; font-size: 20px;">View Cart</button></a>
+        <button type="submit" class="btnn" >View Cart</button>
     </form></h1>
   </center>
-  </div>
-  <br>
-
-    <div style="padding: 100px;">
+    <div style="padding: 50px;">
     <div class="container" style="padding-bottom: 50px;">
       <div class="card">
           <div class="imgBx">
@@ -263,7 +271,7 @@ body {
         </div>
     </div>
   </div>
-  <div style="padding: 100px;">
+  <div style="padding: 50px;">
     <div class="container" style="padding-bottom: 50px;">
       <div class="card">
           <div class="imgBx">
@@ -302,6 +310,7 @@ body {
 
     </div>
 </div>
+  </div>
   </div>
 </body>
 
